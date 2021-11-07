@@ -248,12 +248,15 @@
          return resultado;
      }
 
-/**
      function filtrarAlumnos( edadMenor, edadMayor, alumno ){
          let resultado;
+         let isAgeRange = false;
+
          resultado = alumno.reduce((acumulador, valorActual) => {
-             const llave = valorActual[alumno.edad >= edadMenor &&
-                                       alumno.edad <= edadMayor];
+
+             const llave = valorActual['edad'];
+             isAgeRange = llave >= edadMenor && llave <= edadMayor;
+             if (!isAgeRange) { return acumulador; }
 
              const valor = acumulador[llave] ? [...acumulador[llave], valorActual ] : [valorActual];
 
@@ -265,7 +268,6 @@
 
          return resultado;
      }
-**/
 
      let alumno = [
          {
@@ -546,10 +548,7 @@
      output = dosDecadas( ageRange, alumno );
      console.log('primer estudiante con edad de 20 anios: \n', output );
 
-     //ageRange = [20, 22];
-     //output = filtrarAlumnos( ageRange[0], ageRange[1], alumno );
-     //console.log('estudiantes mayores de 20 y menores de 22 anios:\n', output );
-
-
-
-   #+end_src
+     ageRange = [20, 22];
+     output = filtrarAlumnos( ageRange[0], ageRange[1], alumno );
+     console.log('estudiantes mayores de 20 y menores de 22 anios:\n', output );
+#+end_src

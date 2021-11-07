@@ -1,317 +1,319 @@
 function jovenAdulto( edadMenor, edadMayor, alumno ){
-         let resultado;
+    let resultado;
 
-         resultado = alumno.filter( alumno => ( alumno.edad > edadMenor &&
-                                                alumno.edad < edadMayor ) );
+    resultado = alumno.filter( alumno => ( alumno.edad > edadMenor &&
+                                           alumno.edad < edadMayor ) );
 
-         return resultado;
-     }
+    return resultado;
+}
 
-     function dosDecadas( edad, alumno ){
-         let resultado;
-         resultado = alumno.find(alumno => alumno.edad === 20);
+function dosDecadas( edad, alumno ){
+    let resultado;
+    resultado = alumno.find(alumno => alumno.edad === 20);
 
-         return resultado;
-     }
+    return resultado;
+}
 
-/**
-     function filtrarAlumnos( edadMenor, edadMayor, alumno ){
-         let resultado;
-         resultado = alumno.reduce((acumulador, valorActual) => {
-             const llave = valorActual[alumno.edad >= edadMenor &&
-                                       alumno.edad <= edadMayor];
+function filtrarAlumnos( edadMenor, edadMayor, alumno ){
+    let resultado;
+    let isAgeRange = false;
 
-             const valor = acumulador[llave] ? [...acumulador[llave], valorActual ] : [valorActual];
+    resultado = alumno.reduce((acumulador, valorActual) => {
 
-             acumulador[llave] = valor;
-             return acumulador;
+        const llave = valorActual['edad'];
+        isAgeRange = llave >= edadMenor && llave <= edadMayor;
+        if (!isAgeRange) { return acumulador; }
 
-         }, {}
-                                  );
+        const valor = acumulador[llave] ? [...acumulador[llave], valorActual ] : [valorActual];
 
-         return resultado;
-     }
-**/
+        acumulador[llave] = valor;
+        return acumulador;
 
-     let alumno = [
-         {
-             nombre: 'Dewayne Damon',
-             edad: 20,
-             claseCursa: 'Filosofia'
-         },
+    }, {}
+                             );
 
-         {
-             nombre: 'Brevyn Malik',
-             edad: 26,
-             claseCursa: 'Diseno de Base de Datos'
-         },
+    return resultado;
+}
 
-         {
-             nombre: 'Jarrett Brayden',
-             edad: 27,
-             claseCursa: 'Validacion y Mantenimiento de Software'
-         },
+let alumno = [
+    {
+        nombre: 'Dewayne Damon',
+        edad: 20,
+        claseCursa: 'Filosofia'
+    },
 
-         {
-             nombre: 'Maia Katelynn',
-             edad: 17,
-             claseCursa: 'Programacion 1'
-         },
+    {
+        nombre: 'Brevyn Malik',
+        edad: 26,
+        claseCursa: 'Diseno de Base de Datos'
+    },
 
-         {
-             nombre: 'Sebestian Sanjay',
-             edad: 24,
-             claseCursa: 'Metodologia de la Investigacion'
-         },
+    {
+        nombre: 'Jarrett Brayden',
+        edad: 27,
+        claseCursa: 'Validacion y Mantenimiento de Software'
+    },
 
-         {
-             nombre: 'Lindsey Roselle',
-             edad: 19,
-             claseCursa: 'Marketing'
-         },
+    {
+        nombre: 'Maia Katelynn',
+        edad: 17,
+        claseCursa: 'Programacion 1'
+    },
 
-         {
-             nombre: 'Dane Baylor',
-             edad: 22,
-             claseCursa: 'Muricion'
-         },
+    {
+        nombre: 'Sebestian Sanjay',
+        edad: 24,
+        claseCursa: 'Metodologia de la Investigacion'
+    },
 
-         {
-             nombre: 'Alina Jayne',
-             edad: 21,
-             claseCursa: 'Calculo Diferencial'
-         },
+    {
+        nombre: 'Lindsey Roselle',
+        edad: 19,
+        claseCursa: 'Marketing'
+    },
 
-         {
-             nombre: 'Trixy Aurelia',
-             edad: 18,
-             claseCursa: 'Sistemas Distribuidos'
-         },
+    {
+        nombre: 'Dane Baylor',
+        edad: 22,
+        claseCursa: 'Muricion'
+    },
 
-         {
-             nombre: 'Billy Rodrigo',
-             edad: 23,
-             claseCursa: 'Filosofia'
-         },
+    {
+        nombre: 'Alina Jayne',
+        edad: 21,
+        claseCursa: 'Calculo Diferencial'
+    },
 
-         {
-             nombre: 'Kiran Klay',
-             edad: 18,
-             claseCursa: 'Diseno de Base de Datos'
-         },
+    {
+        nombre: 'Trixy Aurelia',
+        edad: 18,
+        claseCursa: 'Sistemas Distribuidos'
+    },
 
-         {
-             nombre: 'Pat Reef',
-             edad: 22,
-             claseCursa: 'Validacion y Mantenimiento de Software'
-         },
+    {
+        nombre: 'Billy Rodrigo',
+        edad: 23,
+        claseCursa: 'Filosofia'
+    },
 
-         {
-             nombre: 'Jillian Suzanne',
-             edad: 21,
-             claseCursa: 'Programacion 1'
-         },
+    {
+        nombre: 'Kiran Klay',
+        edad: 18,
+        claseCursa: 'Diseno de Base de Datos'
+    },
 
-         {
-             nombre: 'Philippe Drake',
-             edad: 19,
-             claseCursa: 'Metodologia de la Investigacion'
-         },
+    {
+        nombre: 'Pat Reef',
+        edad: 22,
+        claseCursa: 'Validacion y Mantenimiento de Software'
+    },
 
-         {
-             nombre: 'Damon Brenton',
-             edad: 27,
-             claseCursa: 'Marketing'
-         },
+    {
+        nombre: 'Jillian Suzanne',
+        edad: 21,
+        claseCursa: 'Programacion 1'
+    },
 
-         {
-             nombre: 'Dimitri Boyd',
-             edad: 20,
-             claseCursa: 'Calculo Diferencial'
-         },
+    {
+        nombre: 'Philippe Drake',
+        edad: 19,
+        claseCursa: 'Metodologia de la Investigacion'
+    },
 
-         {
-             nombre: 'Alaina Salma',
-             edad: 24,
-             claseCursa: 'Sistemas Distribuidos'
-         },
+    {
+        nombre: 'Damon Brenton',
+        edad: 27,
+        claseCursa: 'Marketing'
+    },
 
-         {
-             nombre: 'Gloria Tabitha',
-             edad: 26,
-             claseCursa: 'Filosofia'
-         },
+    {
+        nombre: 'Dimitri Boyd',
+        edad: 20,
+        claseCursa: 'Calculo Diferencial'
+    },
 
-         {
-             nombre: 'Irvin Darius',
-             edad: 25,
-             claseCursa: 'Diseno de Base de Datos'
-         },
+    {
+        nombre: 'Alaina Salma',
+        edad: 24,
+        claseCursa: 'Sistemas Distribuidos'
+    },
 
-         {
-             nombre: 'Valentin Elias',
-             edad: 17,
-             claseCursa: 'Validacion y Mantenimiento de Software'
-         },
+    {
+        nombre: 'Gloria Tabitha',
+        edad: 26,
+        claseCursa: 'Filosofia'
+    },
 
-         {
-             nombre: 'Joel Brenton',
-             edad: 19,
-             claseCursa: 'Programacion 1'
-         },
+    {
+        nombre: 'Irvin Darius',
+        edad: 25,
+        claseCursa: 'Diseno de Base de Datos'
+    },
 
-         {
-             nombre: 'Davina Honor',
-             edad: 17,
-             claseCursa: 'Metodologia de la Investigacion'
-         },
+    {
+        nombre: 'Valentin Elias',
+        edad: 17,
+        claseCursa: 'Validacion y Mantenimiento de Software'
+    },
 
-         {
-             nombre: 'Linus Jensen',
-             edad: 24,
-             claseCursa: 'Marketing'
-         },
+    {
+        nombre: 'Joel Brenton',
+        edad: 19,
+        claseCursa: 'Programacion 1'
+    },
 
-         {
-             nombre: 'Leah Marcia',
-             edad: 23,
-             claseCursa: 'Calculo Diferencial'
-         },
+    {
+        nombre: 'Davina Honor',
+        edad: 17,
+        claseCursa: 'Metodologia de la Investigacion'
+    },
 
-         {
-             nombre: 'Garth Armando',
-             edad: 27,
-             claseCursa: 'Sistemas Distribuidos'
-         },
+    {
+        nombre: 'Linus Jensen',
+        edad: 24,
+        claseCursa: 'Marketing'
+    },
 
-         {
-             nombre: 'Wolf Lance',
-             edad: 20,
-             claseCursa: 'Filosofia'
-         },
+    {
+        nombre: 'Leah Marcia',
+        edad: 23,
+        claseCursa: 'Calculo Diferencial'
+    },
 
-         {
-             nombre: 'Leticia Jeannette',
-             edad: 25,
-             claseCursa: 'Diseno de Base de Datos'
-         },
+    {
+        nombre: 'Garth Armando',
+        edad: 27,
+        claseCursa: 'Sistemas Distribuidos'
+    },
 
-         {
-             nombre: 'Shona Pansy',
-             edad: 21,
-             claseCursa: 'Validacion y Mantenimiento de Software'
-         },
+    {
+        nombre: 'Wolf Lance',
+        edad: 20,
+        claseCursa: 'Filosofia'
+    },
 
-         {
-             nombre: 'Raylan Layne',
-             edad: 26,
-             claseCursa: 'Programacion 1'
-         },
+    {
+        nombre: 'Leticia Jeannette',
+        edad: 25,
+        claseCursa: 'Diseno de Base de Datos'
+    },
 
-         {
-             nombre: 'Al Casper',
-             edad: 18,
-             claseCursa: 'Metodologia de la Investigacion'
-         },
+    {
+        nombre: 'Shona Pansy',
+        edad: 21,
+        claseCursa: 'Validacion y Mantenimiento de Software'
+    },
 
-         {
-             nombre: 'Alvin Willem',
-             edad: 22,
-             claseCursa: 'Marketing'
-         },
+    {
+        nombre: 'Raylan Layne',
+        edad: 26,
+        claseCursa: 'Programacion 1'
+    },
 
-         {
-             nombre: 'Shelly Kasey',
-             edad: 20,
-             claseCursa: 'Calculo Diferencial'
-         },
+    {
+        nombre: 'Al Casper',
+        edad: 18,
+        claseCursa: 'Metodologia de la Investigacion'
+    },
 
-         {
-             nombre: 'Chrissy Viviana',
-             edad: 24,
-             claseCursa: 'Sistemas Distribuidos'
-         },
+    {
+        nombre: 'Alvin Willem',
+        edad: 22,
+        claseCursa: 'Marketing'
+    },
 
-         {
-             nombre: 'Jamie Yves',
-             edad: 27,
-             claseCursa: 'Filosofia'
-         },
+    {
+        nombre: 'Shelly Kasey',
+        edad: 20,
+        claseCursa: 'Calculo Diferencial'
+    },
 
-         {
-             nombre: 'Forrest Fide',
-             edad: 26,
-             claseCursa: 'Diseno de Base de Datos'
-         },
+    {
+        nombre: 'Chrissy Viviana',
+        edad: 24,
+        claseCursa: 'Sistemas Distribuidos'
+    },
 
-         {
-             nombre: 'Ali Vincent',
-             edad: 21,
-             claseCursa: 'Validacion y Mantenimiento de Software'
-         },
+    {
+        nombre: 'Jamie Yves',
+        edad: 27,
+        claseCursa: 'Filosofia'
+    },
 
-         {
-             nombre: 'Jet Ryland',
-             edad: 18,
-             claseCursa: 'Programacion 1'
-         },
+    {
+        nombre: 'Forrest Fide',
+        edad: 26,
+        claseCursa: 'Diseno de Base de Datos'
+    },
 
-         {
-             nombre: 'Connor Alfonso',
-             edad: 19,
-             claseCursa: 'Metodologia de la Investigacion'
-         },
+    {
+        nombre: 'Ali Vincent',
+        edad: 21,
+        claseCursa: 'Validacion y Mantenimiento de Software'
+    },
 
-         {
-             nombre: 'Kristoff Beckett',
-             edad: 25,
-             claseCursa: 'Marketing'
-         },
+    {
+        nombre: 'Jet Ryland',
+        edad: 18,
+        claseCursa: 'Programacion 1'
+    },
 
-         {
-             nombre: 'Marlon Caesar',
-             edad: 17,
-             claseCursa: 'Calculo Diferencial'
-         },
+    {
+        nombre: 'Connor Alfonso',
+        edad: 19,
+        claseCursa: 'Metodologia de la Investigacion'
+    },
 
-         {
-             nombre: 'Gregor Drake',
-             edad: 22,
-             claseCursa: 'Sistemas Distribuidos'
-         },
+    {
+        nombre: 'Kristoff Beckett',
+        edad: 25,
+        claseCursa: 'Marketing'
+    },
 
-         {
-             nombre: 'Saskia Deirdre',
-             edad: 23,
-             claseCursa: 'Filosofia'
-         },
-         {
-             nombre: 'Charlene Francesca',
-             edad: 20,
-             claseCursa: 'Diseno de Base de Datos'
-         },
-         {
-             nombre: 'Nihal Alden',
-             edad: 21,
-             claseCursa: 'Filosofia'
-         },
-         {
-             nombre: 'Drew Drake',
-             edad: 40,
-             claseCursa: 'Si'
-         }
-     ];
+    {
+        nombre: 'Marlon Caesar',
+        edad: 17,
+        claseCursa: 'Calculo Diferencial'
+    },
 
-     let ageRange = [ 18, 25 ];
-     let output;
+    {
+        nombre: 'Gregor Drake',
+        edad: 22,
+        claseCursa: 'Sistemas Distribuidos'
+    },
 
-     output = jovenAdulto(ageRange[0], ageRange[1], alumno);
-     console.log('estudiantes mayores de 18 y menores de 25 anios:\n', output );
+    {
+        nombre: 'Saskia Deirdre',
+        edad: 23,
+        claseCursa: 'Filosofia'
+    },
+    {
+        nombre: 'Charlene Francesca',
+        edad: 20,
+        claseCursa: 'Diseno de Base de Datos'
+    },
+    {
+        nombre: 'Nihal Alden',
+        edad: 21,
+        claseCursa: 'Filosofia'
+    },
+    {
+        nombre: 'Drew Drake',
+        edad: 40,
+        claseCursa: 'Si'
+    }
+];
 
-     ageRange = 20;
-     output = dosDecadas( ageRange, alumno );
-     console.log('primer estudiante con edad de 20 anios: \n', output );
+let ageRange = [ 18, 25 ];
+let output;
 
-     //ageRange = [20, 22];
-     //output = filtrarAlumnos( ageRange[0], ageRange[1], alumno );
-     //console.log('estudiantes mayores de 20 y menores de 22 anios:\n', output );
+output = jovenAdulto(ageRange[0], ageRange[1], alumno);
+console.log('estudiantes mayores de 18 y menores de 25 anios:\n', output );
+
+ageRange = 20;
+output = dosDecadas( ageRange, alumno );
+console.log('primer estudiante con edad de 20 anios: \n', output );
+
+ageRange = [20, 22];
+output = filtrarAlumnos( ageRange[0], ageRange[1], alumno );
+console.log('estudiantes mayores de 20 y menores de 22 anios:\n', output );
